@@ -1,0 +1,29 @@
+<head>
+  <title>My page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+   <script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"></script>
+  <script src="./materialui.js"  type="text/babel"></script>
+  <script src="./babel.js" ></script>
+    <script src="./MatTable.js"  type="text/babel" ></script>
+  
+  
+  <!-- Fonts to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <!-- Icons to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="./MatTable.js" crossorigin="anonymous"></script>
+  <script type="text/babel">
+    ReactDOM.render(
+      <MatTable />,
+      document.querySelector('#root'),
+    );
+  </script>
+</body>
+
+</html>
