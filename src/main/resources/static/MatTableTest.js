@@ -46,27 +46,22 @@ function MatTableTest(props) {
    
 
     const classes = useStyles();
-    const [listOfHeaders, setListOfHeaders] = React.useState([]);
-    const [listOfUsers, setListOfUsers] = React.useState([]);
-
+    
     if (props.responseList && props.responseList.length) {
         const headers = [];
         const data = JSON.parse(props.responseList);
         if (data && data.length) {
-            const headers = [];
             Object.entries(data[0]).map(([key, value]) => headers.push({ field: key, headerName: mapHeaderInfo(key), width: 300 }));
-            setListOfHeaders(headers);
+
         }
-        if (data && data.length) {
-        setListOfUsers(data);
-        }
-        if (listOfUsers.length && listOfHeaders.length) {     
+        
+        if (data.length && data.length) {     
             return (
                 <TableContainer component={Paper}>
                     <Table className={classes.table} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                {listOfHeaders.map((header, index) => {
+                                {headers.map((header, index) => {
                                     return (<TableCell key={index}>
                                         {
                                             header.headerName
@@ -77,9 +72,9 @@ function MatTableTest(props) {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {listOfUsers.map((user, index) => {
+                            {data.map((user, index) => {
                                 return (<TableRow key={index}>
-                                    { listOfHeaders.map(attribute => { return (<TableCell>{user[attribute.field]}</TableCell>) })}
+                                    { headers.map((attribute, objIndex) => { return (<TableCell key={objIndex}>{user[attribute.field]}</TableCell>) })}
                                 </TableRow>)
                             })}
                         </TableBody>
