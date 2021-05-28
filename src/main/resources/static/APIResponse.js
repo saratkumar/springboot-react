@@ -76,10 +76,10 @@ function APIResponse(props) {
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Item One" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Item Three" {...a11yProps(2)} disabled={props.responseList.length ? false: true}/>
         </Tabs>
       </AppBar>
-      <TabPanel index={0}>
+      <TabPanel value={value} index={0}>
       <Paper className={classes.paper}>
       <TextField
           label="JSON RESPONE"
