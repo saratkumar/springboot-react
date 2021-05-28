@@ -62,12 +62,11 @@ function MatTable() {
                 setListOfUsers(data);
             }).catch(err => console.log(err));
     	}
-        
- 
     
 },[]);
     
     return (
+        <div>
         <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
@@ -91,5 +90,6 @@ function MatTable() {
                 </TableBody>
             </Table>
         </TableContainer>
+        </div>
     );
 }
